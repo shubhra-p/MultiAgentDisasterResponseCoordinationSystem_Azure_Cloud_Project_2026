@@ -459,17 +459,8 @@ The Cloud Coordinator acts as the "god-view" centralised dispatcher with three s
 | 15 | Predictive Disaster Spread      | ⬜ Planned | ML-based disaster trajectory prediction |
 | 16 | Full MARL Training              | ⬜ Planned | Cooperative multi-agent RL via PettingZoo with shared rewards |
 
-### 7.2 Commit History
 
-| Hash | Description |
-|------|-------------|
-| `5ef89b2` | `init:` Initial project scaffold with full digital twin, RL environments, backend, and frontend |
-| `c74eec7` | `feat:` Stripped A\* from observation builder, replaced with Target Compass method for more efficient RL observation |
-| `d74848d` | `feat:` Added GPU-only training — full JAX rewrite of environment, networks, and PPO algorithm |
-| `85d1103` | `feat:` Completely rewritten training scripts and reward functions for improved learning |
-| `733c00d` | `merge:` Integration merge of all feature branches |
-
-### 7.3 Key Technical Achievements
+### 7.2 Key Technical Achievements
 
 1. **50–100× Training Speedup:** By rewriting the entire environment in JAX and running 1,024 parallel environments on a single RTX 4060, the training throughput increased from ~2,000–5,000 SPS (CPU + SB3) to ~100,000–300,000 SPS (GPU + JAX).
 
@@ -479,7 +470,7 @@ The Cloud Coordinator acts as the "god-view" centralised dispatcher with three s
 
 4. **Trained Drone Model:** A working PPO-trained drone model (`drone_jax_ppo.pkl`, 4 MB) has been saved from the JAX pipeline, demonstrating end-to-end training viability.
 
-### 7.4 Lines of Code Summary
+### 7.3 Lines of Code Summary
 
 | Module | Approx. LoC | Language |
 |--------|-------------|----------|
@@ -499,12 +490,11 @@ The Cloud Coordinator acts as the "god-view" centralised dispatcher with three s
 
 ## 8. Literature Survey
 
-Shubhhra Prakash (Detailed at: /literature-survey/shubhra_23bit0087)
+### Shubhhra Prakash (Detailed at: /literature-survey/shubhra_23bit0087)
 When we look at all five of these papers together, a really exciting picture emerges for our cloud-based disaster response system! The big theme connecting everything is the incredible potential of combining Digital Twins which are basically live, virtual copies of the real world with smart, learning AI agents to make split-second decisions in chaotic environments.
 Instead of just using AI as a static tool, these studies show how we can build active ecosystems where multiple AI specialists talk to each other and learn on the fly. For example, the research highlights how we can use a main orchestrator AI to coordinate various sub-agents during a crisis, breaking down data silos so that rescue teams and logistics planners get exactly the insights they need. We also have clear, structured blueprints for how to make these distributed agents monitor catastrophic events and communicate seamlessly across a network.
 At the same time, we see massive proof that plugging Reinforcement Learning into these digital twins allows the system to constantly adapt to its environment. This kind of setup can actively figure out safe routes and coordinate movements while completely avoiding collisions. It can also predict exactly what needs attention first by looking at real-time data and system constraints, which is perfect for prioritizing our scarce resources during an emergency.
 What is really inspiring is that we do not even have to start from scratch to test these ideas. There are open-source simulation frameworks out there designed specifically to handle these digital models, and they allow us to distribute the heavy computational work across cloud clusters to keep everything running fast.
 Overall, by taking the real-time routing and predictive ideas from the factory-focused papers and merging them with the disaster-specific multi-agent architectures, we have a complete and practical blueprint. We can build a coordination system that doesn't just react to emergencies, but actively anticipates them. 
-
 
 ---
